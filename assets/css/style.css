@@ -10,6 +10,8 @@ body{
 
 }
 
+
+
 .header{
     display:flex;
     justify-content: space-between;
@@ -17,6 +19,10 @@ body{
     padding: 8px 16px;
     background-color: #15191C;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+}
+
+.header__perfil{
+    display: none;
 }
 
 .header__menu i::before {
@@ -133,7 +139,9 @@ body{
     grid-template-columns: auto 1fr;
     gap: 8px;
 }
-
+.card__perfil{
+    display: none;
+}
 .card__content--emphasis {
     font-size: 0.9rem;
     grid-column: span 2;
@@ -207,4 +215,64 @@ body{
 .title__section {
     font-size: 1.2rem;
     font-weight: 700;
+}
+
+.footer p{
+    text-align: center;
+    padding: 16px;
+}
+
+@media screen and (min-width: 1440px){
+    
+    body{
+        display: grid;
+        grid-template-columns: auto 1fr;
+    }    
+
+    .header {
+        background-color: #1d232a;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        column-gap: 32px;
+        padding: 16px 60px;
+        height: 80px;
+        box-sizing: border-box;
+    }
+
+    .header__menu{
+        display: none;
+    }
+
+    .header__logo{
+        display: none;
+    }
+
+    .header__perfil{
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        column-gap: 8px;
+        align-items: center;
+        justify-self: flex-end;
+        color: #95999C;
+        padding: 8px 32px;
+        border-right: 1px solid #95999C;
+
+    }
+
+    .header__perfil::before{
+        content: "";
+        display: block;
+        width:32px;
+        height: 32px;
+        background-image: url(../img/profile_2.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .header__perfil::after{
+        content: "\e90d";
+        color:#ffffff;
+        font-size: 1.5rem;
+    }
 }
